@@ -1,0 +1,16 @@
+spring: 
+  mvc:
+    static-path-pattern: /static/**
+    
+  kafka:
+    consumer:
+      bootstrap-servers: 127.0.0.1:9092
+      group-id: myGroup 
+    producer:
+      bootstrap-servers: 127.0.0.1:9092
+    
+server:
+  port: 8080  # Spring boot Server port
+  servlet:
+    context-path: /
+ 

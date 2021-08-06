@@ -1,0 +1,37 @@
+spring: 
+  mvc:
+    static-path-pattern: /static/**
+    
+  devtools:
+    livereload:
+      enabled: false
+    restart:
+      exclude: /static/**, /templates/**  #대상 경로 제외
+      enabled: false
+      trigger-file: .trigger  # 특정 파일을 지정하여 변경시 자동 재시작
+  
+  kafka:
+    consumer:
+      bootstrap-servers: 127.0.0.1:9092
+      group-id: myGroup 
+    producer:
+      bootstrap-servers: 127.0.0.1:9092
+      
+logging:
+  config: classpath:log4j2-local.xml
+  level:
+    com.hj.hjnf.gwsvc: DEBUG
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      
+server:
+  port: 8080  # Spring boot Server port
+  servlet:
+    context-path: /
+ 
+
+ 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+ 
+	<!-- Appender, Layout 설정 -->
+    <Appenders>
+        <Console name="Console-Appender" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>
+                  local %d %p [%c] (%13F:%L) - %m%n
+                </pattern>>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    
+    <!--  Logger 설정 -->
+    <Loggers> 
+        <!-- 	#해당 MS의 Package 명을 명시한다. -->
+        <Logger name="com.hjnf.exam" level="info" additivity="false">
+			<AppenderRef ref="Console-Appender" />
+		</Logger>
+        <Root>
+            <AppenderRef ref="Console-Appender"/>
+        </Root>
+    </Loggers> 
+		
+</Configuration>
+
